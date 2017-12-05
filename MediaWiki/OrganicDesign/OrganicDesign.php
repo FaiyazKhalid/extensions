@@ -9,7 +9,7 @@
  * @licence GNU General Public Licence 2.0 or later
  */
 if( !defined( 'MEDIAWIKI' ) ) die( "Not an entry point." );
-define( 'OD_VERSION', "2.0.9, 2017-12-05" );
+define( 'OD_VERSION', "2.0.8, 2016-08-08" );
 
 // Allow cookies to work for either so that login pages can be HTTPS but the rest of the site HTTP
 $wgCookieSecure = false;
@@ -52,7 +52,7 @@ class OrganicDesign {
 			$uri = $_SERVER['REQUEST_URI'];
 			$ssl = array_key_exists( 'HTTPS', $_SERVER ) && $_SERVER['HTTPS'] == 'on';
 			$od = preg_match( "|^www\.organicdesign\.(.+)$|", $host, $m );
-			$tld = $m[1] ? $m[1] : 'nz';
+			$tld = $m[1] ? $m[1] : 'co.nz';
 			if( !$od || !$ssl ) {
 				header( "Location: https://www.organicdesign.$tld$uri", true, 301 );
 				global $mediaWiki;
@@ -185,19 +185,19 @@ class OrganicDesign {
 
 	public static function languages() {
 		return '<div id="languages" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
-			<a href="https://www.organicdesign.nz' . $_SERVER['REQUEST_URI'] . '" title="English"><img src="/wiki/skins/organicdesign/uk.png" /></a>
+			<a href="https://www.organicdesign.co.nz' . $_SERVER['REQUEST_URI'] . '" title="English"><img src="/wiki/skins/organicdesign/uk.png" /></a>
 			<a href="https://www.organicdesign.com.br' . $_SERVER['REQUEST_URI'] . '" title="Português brasileiro"><img src="/wiki/skins/organicdesign/br.png" /></a>
 		</div>';
 	}
 
 	public static function social() {
 		$social = '<div id="social">';
-		$social .= '<a title="GNU Social" href="https://social.organicdesign.nz"><img src="/files/0/0e/Gnusocial_32.png" alt="GNU Social" /></a>';
-		$social .= '<a title="RSS" href="https://www.organicdesign.nz/wiki/api.php?action=blikifeed"><img src="/files/6/6d/Rss_32.png" alt="RSS" /></a>';
+		$social .= '<a title="GNU Social" href="https://social.organicdesign.co.nz"><img src="/files/0/0e/Gnusocial_32.png" alt="GNU Social" /></a>';
+		$social .= '<a title="RSS" href="https://www.organicdesign.co.nz/wiki/api.php?action=blikifeed"><img src="/files/6/6d/Rss_32.png" alt="RSS" /></a>';
 		$social .= '<a title="Github" href="https://github.com/OrganicDesign"><img src="/files/c/c0/Github_32.png" alt="Github" /></a>';
-		$social .= '<a title="Email" href="https://www.organicdesign.nz/contact"><img src="/files/e/e6/Email_32.png" alt="Email" /></a>';
+		$social .= '<a title="Email" href="https://www.organicdesign.co.nz/contact"><img src="/files/e/e6/Email_32.png" alt="Email" /></a>';
 		$social .= '<a title="Twitter" href="https://twitter.com/AranDunkley"><img src="/files/0/00/Twitter_32.png" alt="Twitter" /></a>';
-		$social .= '<a title="Facebook" href="https://www.facebook.com/organicdesign.nz"><img src="/files/8/81/Facebook_32.png" alt="Facebook" /></a>';
+		$social .= '<a title="Facebook" href="https://www.facebook.com/organicdesign.co.nz"><img src="/files/8/81/Facebook_32.png" alt="Facebook" /></a>';
 		$social .= '</div>';
 		return $social;
 	}
