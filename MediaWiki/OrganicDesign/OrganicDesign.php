@@ -192,7 +192,7 @@ class OrganicDesign {
 
 	public static function languages() {
 		return '<div id="languages" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
-			<a href="https://www.organicdesign.nz' . $_SERVER['REQUEST_URI'] . '" title="English"><img src="/wiki/skins/organicdesign/uk.png" /></a>
+			<a href="https://organicdesign.nz' . $_SERVER['REQUEST_URI'] . '" title="English"><img src="/wiki/skins/organicdesign/uk.png" /></a>
 			<a href="https://www.organicdesign.com.br' . $_SERVER['REQUEST_URI'] . '" title="Português brasileiro"><img src="/wiki/skins/organicdesign/br.png" /></a>
 		</div>';
 	}
