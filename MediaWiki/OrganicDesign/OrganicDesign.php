@@ -52,7 +52,7 @@ class OrganicDesign {
 			$host = preg_match( "|^(.+):\d+$|", $_SERVER['HTTP_HOST'], $m ) ? $m[1] : $_SERVER['HTTP_HOST'];
 			$uri = $_SERVER['REQUEST_URI'];
 			$ssl = array_key_exists( 'HTTPS', $_SERVER ) && $_SERVER['HTTPS'] == 'on';
-			$od = preg_match( "|^(www\.)?organicdesign\.(.+)$|", $host, $m );
+			$od = preg_match( "|^(?:www\.)?organicdesign\.(.+)$|", $host, $m );
 			$tld = $m[1] ? $m[1] : 'nz';
 			$www = 'www.';
 			if( $tld == 'co.nz' || $tld = 'nz' ) {
