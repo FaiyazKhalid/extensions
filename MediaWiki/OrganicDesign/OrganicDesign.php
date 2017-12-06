@@ -200,11 +200,11 @@ class OrganicDesign {
 	public static function social() {
 		$social = '<div id="social">';
 		$social .= '<a title="GNU Social" href="https://social.organicdesign.nz"><img src="/files/0/0e/Gnusocial_32.png" alt="GNU Social" /></a>';
-		$social .= '<a title="RSS" href="https://www.organicdesign.nz/wiki/api.php?action=blikifeed"><img src="/files/6/6d/Rss_32.png" alt="RSS" /></a>';
+		$social .= '<a title="RSS" href="https://organicdesign.nz/wiki/api.php?action=blikifeed"><img src="/files/6/6d/Rss_32.png" alt="RSS" /></a>';
 		$social .= '<a title="Github" href="https://github.com/OrganicDesign"><img src="/files/c/c0/Github_32.png" alt="Github" /></a>';
-		$social .= '<a title="Email" href="https://www.organicdesign.nz/contact"><img src="/files/e/e6/Email_32.png" alt="Email" /></a>';
+		$social .= '<a title="Email" href="https://organicdesign.nz/contact"><img src="/files/e/e6/Email_32.png" alt="Email" /></a>';
 		$social .= '<a title="Twitter" href="https://twitter.com/AranDunkley"><img src="/files/0/00/Twitter_32.png" alt="Twitter" /></a>';
-		$social .= '<a title="Facebook" href="https://www.facebook.com/organicdesign.nz"><img src="/files/8/81/Facebook_32.png" alt="Facebook" /></a>';
+		$social .= '<a title="Facebook" href="https://www.facebook.com/organicdesign.co.nz"><img src="/files/8/81/Facebook_32.png" alt="Facebook" /></a>';
 		$social .= '</div>';
 		return $social;
 	}
