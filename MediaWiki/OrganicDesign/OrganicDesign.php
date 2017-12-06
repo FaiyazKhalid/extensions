@@ -46,19 +46,22 @@ class OrganicDesign {
 		global $wgOut, $wgExtensionAssetsPath, $wgResourceModules, $wgUser, $wgCommandLineMode;
 		self::$title = array_key_exists( 'title', $_REQUEST ) ? Title::newFromText( $_REQUEST['title'] ) : false;
 
-		// Bounce to the https www (if they're not https or not www)
+		// Bounce to the https www (if they're not https or www)
+		// - note that organicdesign.nz is non-www now
 		if( !$wgCommandLineMode ) {
 			$host = preg_match( "|^(.+):\d+$|", $_SERVER['HTTP_HOST'], $m ) ? $m[1] : $_SERVER['HTTP_HOST'];
 			$uri = $_SERVER['REQUEST_URI'];
 			$ssl = array_key_exists( 'HTTPS', $_SERVER ) && $_SERVER['HTTPS'] == 'on';
-			$od = preg_match( "|^www\.organicdesign\.(.+)$|", $host, $m );
+			$od = preg_match( "|^(www\.)?organicdesign\.(.+)$|", $host, $m );
 			$tld = $m[1] ? $m[1] : 'nz';
-			if( $tld == 'co.nz' ) {
+			$www = 'www.';
+			if( $tld == 'co.nz' || $tld = 'nz' ) {
 				$tld = 'nz';
 				$od = false;
+				$www = '';
 			}
 			if( !$od || !$ssl ) {
-				header( "Location: https://www.organicdesign.$tld$uri", true, 301 );
+				header( "Location: https://{$www}organicdesign.$tld$uri", true, 301 );
 				global $mediaWiki;
 				if( is_object( $mediaWiki ) ) $mediaWiki->restInPeace();
 				exit;
