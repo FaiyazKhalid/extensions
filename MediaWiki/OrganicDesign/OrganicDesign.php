@@ -61,7 +61,7 @@ class OrganicDesign {
 				$redir = true;
 				$www = '';
 			}
-			if( $tld = 'nz' && $www ) {
+			if( $tld == 'nz' && $www ) {
 				$www = '';
 				$redir = true;
 			}
