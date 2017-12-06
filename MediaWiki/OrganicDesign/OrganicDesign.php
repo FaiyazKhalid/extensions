@@ -53,7 +53,10 @@ class OrganicDesign {
 			$ssl = array_key_exists( 'HTTPS', $_SERVER ) && $_SERVER['HTTPS'] == 'on';
 			$od = preg_match( "|^www\.organicdesign\.(.+)$|", $host, $m );
 			$tld = $m[1] ? $m[1] : 'nz';
-			if( $tld == 'co.nz' ) $tld = 'nz';
+			if( $tld == 'co.nz' ) {
+				$tld = 'nz';
+				$od = false;
+			}
 			if( !$od || !$ssl ) {
 				header( "Location: https://www.organicdesign.$tld$uri", true, 301 );
 				global $mediaWiki;
