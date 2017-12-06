@@ -53,14 +53,23 @@ class OrganicDesign {
 			$uri = $_SERVER['REQUEST_URI'];
 			$ssl = array_key_exists( 'HTTPS', $_SERVER ) && $_SERVER['HTTPS'] == 'on';
 			$od = preg_match( "|^(www\.)?organicdesign\.(.+)$|", $host, $m );
+			$www = $m[1];
 			$tld = $m[2] ? $m[2] : 'nz';
-			$www = 'www.';
-			if( $tld == 'co.nz' || $tld = 'nz' ) {
+			$redir = ( !$od || !$ssl );
+			if( $tld == 'co.nz' ) {
 				$tld = 'nz';
-				$od = false;
+				$redir = true;
 				$www = '';
 			}
-			if( !$od || !$ssl ) {
+			if( $tld = 'nz' && $www ) {
+				$www = '';
+				$redir = true;
+			}
+			if( $tld != 'nz' && !$www ) {
+				$www = 'www.';
+				$redir = true;
+			}
+			if( $redir ) {
 				header( "Location: https://{$www}organicdesign.$tld$uri", true, 301 );
 				global $mediaWiki;
 				if( is_object( $mediaWiki ) ) $mediaWiki->restInPeace();
