@@ -386,7 +386,7 @@ table.blog th, .blog-sig {
 	color: #666;
 }
 table.blog th a, .blog-sig a,
-table.blog th a.external, .blog-sig a.external {
+body #bodyContent table.blog th a.external, body #bodyContent .blog-sig a.external {
 	/*text-decoration: underline;*/
 	font-weight: bold;
 	color: #217a28;
@@ -397,6 +397,7 @@ table.blog th a.external, .blog-sig a.external {
 }
 .taglist a {
 	font-weight: bold;
+	color: #217a28;
 }
 .bliki-pager {
 	text-align: center;
