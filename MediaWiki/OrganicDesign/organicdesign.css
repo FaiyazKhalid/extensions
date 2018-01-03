@@ -395,7 +395,7 @@ body #bodyContent table.blog th a.external, body #bodyContent .blog-sig a.extern
 	font-size: 85%;
 	color: #666;
 }
-body #bodyContent .taglist a {
+body #bodyContent .taglist a.external {
 	font-weight: bold;
 	color: #217a28;
 }
