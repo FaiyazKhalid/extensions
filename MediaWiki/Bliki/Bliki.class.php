@@ -213,6 +213,7 @@ class Bliki {
 			$user = User::newFromID( $rev->rev_user )->getName();
 			$link = self::blogLink( wfMessage( 'bliki-cat', $user )->text() );
 			$sig = wfMessage( 'bliki-sig', $link, $user, $wgLang->date( $rev->rev_timestamp, true ), $wgLang->time( $rev->rev_timestamp, true ) )->text();
+			$sig = preg_replace( '/\w\w\w+/', '[[$0]]', $sig );
 			$content = "{|class=blog\n|\n== [[$page]] ==\n|-\n!$sig\n|-\n|$tags\n|-\n|$content\n|}";
 
 			// Parse the item and add to the roll
