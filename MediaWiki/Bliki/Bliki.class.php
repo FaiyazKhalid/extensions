@@ -212,7 +212,7 @@ class Bliki {
 			$page = $title->getPrefixedText();
 			$user = User::newFromID( $rev->rev_user )->getName();
 			$link = self::blogLink( wfMessage( 'bliki-cat', $user )->text() );
-			$date = preg_replace( '/\w\w\w+/', '[[$0]]', $wgLang->date( $rev->rev_timestamp, true ) );
+			$date = preg_replace( '/[A-Z][a-z][a-z]+/', '[[$0]]', $wgLang->date( $rev->rev_timestamp, true ) );
 			$sig = wfMessage( 'bliki-sig', $link, $user, $date, $wgLang->time( $rev->rev_timestamp, true ) )->text();
 			$content = "{|class=blog\n|\n== [[$page]] ==\n|-\n!$sig\n|-\n|$tags\n|-\n|$content\n|}";
 
