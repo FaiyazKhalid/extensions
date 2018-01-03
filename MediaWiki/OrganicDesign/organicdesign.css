@@ -385,13 +385,18 @@ table.blog th, .blog-sig {
 	font-size: 75%;
 	color: #666;
 }
-table.blog th a, .blog-sig a {
+table.blog th a, .blog-sig a,
+table.blog th a.external, .blog-sig a.external {
 	/*text-decoration: underline;*/
+	font-weight: bold;
 	color: #217a28;
 }
 .taglist {
 	font-size: 85%;
 	color: #666;
+}
+.taglist a {
+	font-weight: bold;
 }
 .bliki-pager {
 	text-align: center;
