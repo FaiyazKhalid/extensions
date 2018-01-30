@@ -213,7 +213,7 @@ class OrganicDesign {
 		$social .= '<a title="Github" href="https://github.com/OrganicDesign"><img src="/files/c/c0/Github_32.png" alt="Github" /></a>';
 		$social .= '<a title="Email" href="https://organicdesign.nz/contact"><img src="/files/e/e6/Email_32.png" alt="Email" /></a>';
 		$social .= '<a title="Twitter" href="https://twitter.com/AranDunkley"><img src="/files/0/00/Twitter_32.png" alt="Twitter" /></a>';
-		$social .= '<a title="Facebook" href="https://www.facebook.com/organicdesign.co.nz"><img src="/files/8/81/Facebook_32.png" alt="Facebook" /></a>';
+		$social .= '<a title="Facebook" href="https://www.facebook.com/arandunkley"><img src="/files/8/81/Facebook_32.png" alt="Facebook" /></a>';
 		$social .= '</div>';
 		return $social;
 	}
