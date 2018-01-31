@@ -94,7 +94,9 @@ class TreeAndMenu {
 		}
 
 		// Parse the bullets to HTML
-		$html = $parser->parse( $bullets, $parser->getTitle(), $parser->getOptions(), true, false )->getText();
+		$opt = $parser->getOptions();
+		if( method_exists( $opt, 'setWrapOutputClass' ) ) $opt->setWrapOutputClass( false );
+		$html = $parser->parse( $bullets, $parser->getTitle(), $opt, true, false )->getText();
 
 		// Determine the class and id attributes
 		$class = $type == TREEANDMENU_TREE ? 'fancytree' : 'suckerfish';
