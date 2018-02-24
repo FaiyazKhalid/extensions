@@ -513,3 +513,8 @@ body.page-Home #bodyContent {
 span.hljs-highlight {
 	background-color: #f5fd82;
 }
+
+/* Hide overflow so gallery not messed up by errors */
+.MediaTransformError {
+	overflow: hidden;
+}
