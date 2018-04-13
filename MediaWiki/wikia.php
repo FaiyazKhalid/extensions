@@ -19,6 +19,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die( 'Not an entry point.' );
  * http://www.gnu.org/copyleft/gpl.html
  *
  */
+ $wgReadOnly = true;
 ini_set( 'memory_limit', '128M' );
 
 // Need to turn of strict warnings as too many third-party extensions raise errors
