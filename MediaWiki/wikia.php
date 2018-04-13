@@ -19,7 +19,6 @@ if ( !defined( 'MEDIAWIKI' ) ) die( 'Not an entry point.' );
  * http://www.gnu.org/copyleft/gpl.html
  *
  */
- $wgReadOnly = true;
 ini_set( 'memory_limit', '128M' );
 
 // Need to turn of strict warnings as too many third-party extensions raise errors
@@ -27,13 +26,13 @@ ini_set( 'display_errors', 'Off' );
 error_reporting( E_ALL & ~E_STRICT & ~E_NOTICE );
 
 // Constants
-define( 'WIKIA_VERSION', '1.2.19, 2015-05-17' );
+define( 'WIKIA_VERSION', '1.2.20, 2018-04-13' );
 
 // Read the DB access and bot name info from wikid.conf
 $wgWikidAddr = '127.0.0.1';
 foreach( file( '/var/www/tools/wikid.conf' ) as $line ) {
 	if( preg_match( "|^\s*\\\$addr\s*=\s*['\"](.+?)[\"']|m", $line, $m ) ) $wgWikidAddr = $m[1];
-	if( preg_match( "|^\s*\\\$(wgDB.+?)\s*=\s*['\"](.+?)[\"']|m", $line, $m ) ) $$m[1] = $m[2];
+	if( preg_match( "|^\s*\\\$(wgDB.+?)\s*=\s*['\"](.+?)[\"']|m", $line, $m ) ) ${$m[1]} = $m[2];
 }
 
 // Namespaces
