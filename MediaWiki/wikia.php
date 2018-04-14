@@ -32,7 +32,7 @@ define( 'WIKIA_VERSION', '1.2.19, 2015-05-17' );
 $wgWikidAddr = '127.0.0.1';
 foreach( file( '/var/www/tools/wikid.conf' ) as $line ) {
 	if( preg_match( "|^\s*\\\$addr\s*=\s*['\"](.+?)[\"']|m", $line, $m ) ) $wgWikidAddr = $m[1];
-	if( preg_match( "|^\s*\\\$(wgDB.+?)\s*=\s*['\"](.+?)[\"']|m", $line, $m ) ) $$m[1] = $m[2];
+	if( preg_match( "|^\s*\\\$(wgDB.+?)\s*=\s*['\"](.+?)[\"']|m", $line, $m ) ) ${$m[1]} = $m[2];
 }
 
 // Namespaces
