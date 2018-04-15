@@ -15,7 +15,7 @@ class SkinWholistic extends SkinTemplate {
 
 	var $skinname = 'wholistic', $stylename = 'wholistic',
 		$template = 'WholisticTemplate', $useHeadElement = true,
-		$dcsPage = false, $showTitle = true;
+		$showTitle = true;
 
 	/**
 	 * Initializes output page and sets up skin-specific parameters

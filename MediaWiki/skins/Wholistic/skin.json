@@ -24,7 +24,7 @@
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
-		"remoteSkinPath": ""
+		"remoteSkinPath": "/skins/Wholsitic"
 	},
 	"AutoloadClasses": {
 		"SkinWholistic": "SkinWholistic.php",
