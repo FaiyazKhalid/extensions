@@ -46,8 +46,6 @@ class WholisticTemplate extends BaseTemplate {
 	</div>
 </div>
 </td></tr></table></div>
-
-</div><!-- end of the left (by default at least) column -->
 <div class="visualClear"></div>
 
 <?php
