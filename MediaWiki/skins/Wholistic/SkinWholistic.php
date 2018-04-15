@@ -23,7 +23,7 @@ class SkinWholistic extends SkinTemplate {
 	 */
 	public function initPage( OutputPage $out ) {
 		global $wgExtensionAssetsPath;
-		//$out->addStyle( $wgExtensionAssetsPath . '/skins/Wholistic/styles/main.css' );
+		$out->addStyle( '/skins/Wholistic/styles/main.css' );
 		parent::initPage( $out );
 	}
 

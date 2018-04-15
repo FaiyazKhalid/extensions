@@ -12,7 +12,7 @@ class WholisticTemplate extends BaseTemplate {
 	 * Outputs the entire contents of the XHTML page
 	 */
 	public function execute() {
-		global $wgOut;
+		global $wgOut, $wgJsMimeType;
 
 ?><div id="globalWrapper"><table width="100%"><tr><td align="center">
 <div id="content" <?php $this->html("specialpageattributes") ?>>
