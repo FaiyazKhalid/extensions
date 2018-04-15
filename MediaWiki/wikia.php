@@ -26,9 +26,9 @@ ini_set( 'display_errors', 'Off' );
 error_reporting( E_ALL & ~E_STRICT & ~E_NOTICE );
 
 // Constants
-define( 'WIKIA_VERSION', '1.2.20, 2018-04-13' );
+define( 'WIKIA_VERSION', '1.2.19, 2015-05-17' );
 
-// Read the DB access from wikid.conf
+// Read the DB access and bot name info from wikid.conf
 $wgWikidAddr = '127.0.0.1';
 foreach( file( '/var/www/tools/wikid.conf' ) as $line ) {
 	if( preg_match( "|^\s*\\\$addr\s*=\s*['\"](.+?)[\"']|m", $line, $m ) ) $wgWikidAddr = $m[1];
@@ -94,10 +94,10 @@ $wgAllowCopyUploads       = true;
 $wgCopyUploadsFromSpecialUpload = true;
 $wgUploadPath             = '/files';
 $wgFileExtensions         = array(
-	'jpeg', 'jpg', 'png', 'psd', 'xcf', 'gif', 'svg', 'swf',
+	'jpeg', 'jpg', 'png', 'gif', 'svg', 'swf',
 	'pdf', 'xls', 'xlsx', 'ods', 'odt', 'odp', 'doc', 'docx', 'mm',
 	'zip', '7z', 'gz', 'tgz', 't7z',
-	'avi', 'divx', 'mpeg', 'mpg', 'ogv', 'ogm', 'mp3', 'mp4', 'flv', 'wav', 'ogg',
+	'avi', 'divx', 'mpeg', 'mpg', 'ogv', 'ogm', 'mp3', 'mp4', 'flv', 'wav',
 	'torrent'
 );
 $wgGroupPermissions['sysop']['upload_by_url'] = true;
@@ -108,7 +108,7 @@ $wgExtensionMessagesFiles['OD'] = dirname( __FILE__ ) . '/wikia.i18n.php';
 // Allow fallback to OD images
 $wgUseSharedUploads       = true;
 $wgSharedUploadDirectory  = '/var/www/wikis/od/files';
-$wgSharedUploadPath       = 'https://www.organicdesign.co.nz/files';
+$wgSharedUploadPath       = 'http://www.organicdesign.co.nz/files';
 
 // Global wikia configuration
 $settings                 = '/var/www/wikis';
@@ -203,16 +203,6 @@ function odWikidAccess( &$user, &$result ) {
 	if( $wgWikidUserId && $_SERVER['REMOTE_ADDR'] == $wgWikidAddr ) {
 		$user->setId( $wgWikidUserId );
 		$result = false;
-	}
-	return true;
-}
-
-// Return whether the request is local
-function odIsLocal() {
-	if( array_key_exists( 'REMOTE_ADDR', $_SERVER ) ) {
-		if( preg_match_all( "|inet6? addr:\s*([0-9a-f.:]+)|", `/sbin/ifconfig`, $matches ) && !in_array( $_SERVER['REMOTE_ADDR'], $matches[1] ) ) {
-			return false;
-		}
 	}
 	return true;
 }
