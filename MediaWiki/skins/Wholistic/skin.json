@@ -1,0 +1,36 @@
+{
+	"name": "DcsSkin",
+	"version": "3.0.2, 2016-07-01",
+	"author": ["[http://www.organicdesign.co.nz/aran Aran Dunkley]"],
+	"url": "http://www.debtcompliance.com",
+	"type": "skin",
+	"descriptionmsg": "dcsskin-desc",
+	"license-name": "[http://www.debtcompliance.com Copyright © 2007-2018 Debt Compliance Services]",
+	"ValidSkinNames": {
+		"dcs": "Dcs"
+	},
+	"MessagesDirs": {
+		"DcsSkin": ["i18n"]
+	},
+	"ResourceModules": {
+		"skin.dcs": {
+			"position": "top",
+			"styles": {
+				"styles/wiki.css": {
+					"media": "all"
+				},
+				"styles/qar.css": {
+					"media": "all"
+				}
+			}
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "dcs/DcsSkin"
+	},
+	"AutoloadClasses": {
+		"SkinDcs": "SkinDcs.php",
+		"DcsTemplate": "DcsTemplate.php"
+	}
+}
