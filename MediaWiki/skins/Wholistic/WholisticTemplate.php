@@ -13,7 +13,7 @@ class WholisticTemplate extends BaseTemplate {
 	 */
 	public function execute() {
 		global $wgOut, $wgJsMimeType;
-
+		$this->html( 'headelement' );
 ?><div id="globalWrapper"><table width="100%"><tr><td align="center">
 <div id="content" <?php $this->html("specialpageattributes") ?>>
 
