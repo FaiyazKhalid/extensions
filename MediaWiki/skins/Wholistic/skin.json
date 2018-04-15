@@ -1,25 +1,22 @@
 {
-	"name": "DcsSkin",
-	"version": "3.0.2, 2016-07-01",
+	"name": "WholisticSkin",
+	"version": "2.0.0, 2018-04-15",
 	"author": ["[http://www.organicdesign.co.nz/aran Aran Dunkley]"],
-	"url": "http://www.debtcompliance.com",
+	"url": "https://wholisticbodybalance.co.nz",
 	"type": "skin",
-	"descriptionmsg": "dcsskin-desc",
-	"license-name": "[http://www.debtcompliance.com Copyright © 2007-2018 Debt Compliance Services]",
+	"descriptionmsg": "wholisticskin-desc",
+	"license-name": "[https://wholisticbodybalance.co.nz Copyright © 2018 Wholistic Bodybalance]",
 	"ValidSkinNames": {
-		"dcs": "Dcs"
+		"wholistic": "Wholistic"
 	},
 	"MessagesDirs": {
-		"DcsSkin": ["i18n"]
+		"WholisticSkin": ["i18n"]
 	},
 	"ResourceModules": {
-		"skin.dcs": {
+		"skin.wholistic": {
 			"position": "top",
 			"styles": {
-				"styles/wiki.css": {
-					"media": "all"
-				},
-				"styles/qar.css": {
+				"styles/main.css": {
 					"media": "all"
 				}
 			}
@@ -27,10 +24,10 @@
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
-		"remoteSkinPath": "dcs/DcsSkin"
+		"remoteSkinPath": ""
 	},
 	"AutoloadClasses": {
-		"SkinDcs": "SkinDcs.php",
-		"DcsTemplate": "DcsTemplate.php"
+		"SkinWholistic": "SkinWholistic.php",
+		"WholisticTemplate": "WholisticTemplate.php"
 	}
 }

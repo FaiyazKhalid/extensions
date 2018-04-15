@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": ["[http://www.organicdesign.co.nz/aran Aran Dunkley]"]
+	},
+	"skinname-wholistic": "WholisticSkin",
+	"wholisticskin-desc": "Wholistic skin desgined to match the QAR app",
+	"wholisticskin.css": "/* CSS placed here will affect users of the Wholistic skin */",
+	"wholisticskin.js": "/* Any JavaScript here will be loaded for users using the Wholistic skin */"
+}
