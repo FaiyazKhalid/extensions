@@ -1,6 +1,6 @@
 <?php
 /**
- * DCS MediaWiki skin
+ * Wholistic MediaWiki skin
  *
  * @file
  * @ingroup Skins
@@ -11,10 +11,10 @@ if( !defined( 'MEDIAWIKI' ) ) die( -1 );
  * SkinTemplate class for Dcs skin
  * @ingroup Skins
  */
-class SkinDcs extends SkinTemplate {
+class SkinWholistic extends SkinTemplate {
 
-	var $skinname = 'dcs', $stylename = 'dcs',
-		$template = 'DcsTemplate', $useHeadElement = true,
+	var $skinname = 'wholistic', $stylename = 'wholistic',
+		$template = 'WholisticTemplate', $useHeadElement = true,
 		$dcsPage = false, $showTitle = true;
 
 	/**
@@ -23,7 +23,7 @@ class SkinDcs extends SkinTemplate {
 	 */
 	public function initPage( OutputPage $out ) {
 		global $wgExtensionAssetsPath;
-		$out->addStyle( $wgExtensionAssetsPath . '/dcs/DcsSkin/styles/dcs.css' );
+		//$out->addStyle( $wgExtensionAssetsPath . '/skins/Wholistic/styles/main.css' );
 		parent::initPage( $out );
 	}
 
@@ -34,6 +34,6 @@ class SkinDcs extends SkinTemplate {
 	 */
 	function setupSkinUserCss( OutputPage $out ){
 		parent::setupSkinUserCss( $out );
-		$out->addModuleStyles( "skin.dcs" );
+		$out->addModuleStyles( "skin.wholistic" );
 	}
 }

@@ -10,7 +10,7 @@
 		"wholistic": "Wholistic"
 	},
 	"MessagesDirs": {
-		"WholisticSkin": ["i18n"]
+		"Wholistic": ["i18n"]
 	},
 	"ResourceModules": {
 		"skin.wholistic": {
