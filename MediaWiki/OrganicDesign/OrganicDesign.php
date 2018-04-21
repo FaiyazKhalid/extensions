@@ -273,7 +273,9 @@ class OrganicDesign {
 	 */
 	private static function parse( $title ) {
 		global $wgParser;
-		return $wgParser->getFreshParser()->parse( $article->getPage()->getContent()->getNativeData(), $title, $wgParser->getOptions() )->getText();
+		$article = new Article( $title );
+		$content = $article->getPage()->getContent()->getNativeData();
+		return $wgParser->getFreshParser()->parse( $content, $title, $wgParser->getOptions() )->getText();
 	}
 
 }
