@@ -5,11 +5,11 @@
  * @package MediaWiki
  * @subpackage Extensions
  * @author Aran Dunkley [http://www.organicdesign.co.nz/nad User:Nad]
- * @copyright © 2012-2015 Aran Dunkley
+ * @copyright © 2012-2018 Aran Dunkley
  * @licence GNU General Public Licence 2.0 or later
  */
 if( !defined( 'MEDIAWIKI' ) ) die( "Not an entry point." );
-define( 'OD_VERSION', "2.0.10, 2017-12-06" );
+define( 'OD_VERSION', "2.1.0, 2018-04-20" );
 
 // Allow cookies to work for either so that login pages can be HTTPS but the rest of the site HTTP
 $wgCookieSecure = false;
@@ -154,9 +154,7 @@ class OrganicDesign {
 		);
 
 		// Sidebar
-		$title = Title::newFromText( 'Od-sidebar', NS_MEDIAWIKI );
-		$article = new Article( $title );
-		$html = $output->parse( $article->getPage()->getContent()->getNativeData() );
+		$html = self::parse( Title::newFromText( 'Od-sidebar', NS_MEDIAWIKI ) );
 		$out = str_replace(
 			$match = '<div class="portlet" id="p-tb"',
 			$html . $match,
@@ -164,9 +162,7 @@ class OrganicDesign {
 		);
 
 		// Footer
-		$title = Title::newFromText( 'Footer', NS_MEDIAWIKI );
-		$article = new Article( $title );
-		$html = $output->parse( $article->getPage()->getContent()->getNativeData() );
+		$html = self::parse( Title::newFromText( 'Footer', NS_MEDIAWIKI ) );
 		$out = preg_replace(
 			'#<div( id="footer".*?>)#',
 			"<div itemscope itemtype=\"http://www.schema.org/WPFooter\"$1\n<div id=\"od-footer\">$html</div>",
@@ -266,10 +262,18 @@ class OrganicDesign {
 		global $wgTitle;
 		if( $title === false ) $title = $wgTitle;
 		if( !is_object( $title ) ) $title = Title::newFromText( $title );
-		$id   = $title->getArticleID();
-		$dbr  = wfGetDB( DB_SLAVE );
-		$cat  = $dbr->addQuotes( Title::newFromText( $cat, NS_CATEGORY )->getDBkey() );
+		$id  = $title->getArticleID();
+		$dbr = wfGetDB( DB_SLAVE );
+		$cat = $dbr->addQuotes( Title::newFromText( $cat, NS_CATEGORY )->getDBkey() );
 		return $dbr->selectRow( 'categorylinks', '1', "cl_from = $id AND cl_to = $cat" );
+	}
+
+	/**
+	 * Return the parsed content of the passed title
+	 */
+	private static function parse( $title ) {
+		global $wgParser;
+		return $wgParser->getFreshParser()->parse( $article->getPage()->getContent()->getNativeData(), $title, $wgParser->getOptions() )->getText();
 	}
 
 }
