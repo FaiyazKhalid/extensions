@@ -275,7 +275,7 @@ class OrganicDesign {
 		global $wgParser;
 		$article = new Article( $title );
 		$content = $article->getPage()->getContent()->getNativeData();
-		return $wgParser->getFreshParser()->parse( $content, $title, $wgParser->getOptions() )->getText();
+		//return $wgParser->getFreshParser()->parse( $content, $title, $wgParser->getOptions() )->getText();
 	}
 
 }
