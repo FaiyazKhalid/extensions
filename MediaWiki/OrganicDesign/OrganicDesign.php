@@ -38,7 +38,7 @@ class OrganicDesign {
 		$wgHooks['AfterFinalPageOutput'][] = $this;
 
 		// Set language to pt if it's the pt domain
-		if( preg_match( "/\.br$/", $_SERVER['HTTP_HOST'] ) ) $wgLanguageCode = 'pt-br';
+		$wgLanguageCode = preg_match( "/\.br$/", $_SERVER['HTTP_HOST'] ) ? 'pt-br' : 'en';
 
 	}
 
