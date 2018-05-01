@@ -218,16 +218,6 @@ class OrganicDesign {
 		global $wgOrganicDesignDonations, $wgOrganicDesignDonationsBTC;
 		return '<div class="portlet" id="donations">
 		<h2 style="white-space:nowrap">' . wfMessage('tips-welcome') . '</h2>
-		<h5>' . wfMessage('paypal-or-cc') . '</h5>
-		<div class="pBody">
-			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-				<input type="hidden" name="cmd" value="_xclick">
-				<input type="hidden" name="business" value="' . $wgOrganicDesignDonations . '" />
-				<input type="hidden" name="item_name" value="Donation to Organic Design">
-				<input type="hidden" name="currency_code" value="USD">
-				$<input style="width:35px" type="text" name="amount" value="5.00" />&nbsp;<input type="submit" value="' . wfMessage('checkout') . '" />
-			</form>
-		</div>
 		<h5 id="btcbest">' . wfMessage( 'btc-awesome' )->parse() . '</h5>
 		<div class="pBody" style="white-space:nowrap;vertical-align:top;background:url(/files/a/a0/Bitcoin-icon.png) no-repeat 5px 6px;">
 			<input style="width:139px;margin-left:23px" readonly="1" value="' . $wgOrganicDesignDonationsBTC . '" onmouseover="this.select()" />
