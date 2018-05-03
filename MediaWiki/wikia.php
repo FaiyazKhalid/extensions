@@ -109,7 +109,7 @@ $wgExtensionMessagesFiles['OD'] = dirname( __FILE__ ) . '/wikia.i18n.php';
 // Allow fallback to OD images
 $wgUseSharedUploads       = true;
 $wgSharedUploadDirectory  = '/var/www/wikis/od/files';
-$wgSharedUploadPath       = 'http://www.organicdesign.co.nz/files';
+$wgSharedUploadPath       = 'https://organicdesign.nz/files';
 
 // Global wikia configuration
 $settings                 = '/var/www/wikis';
