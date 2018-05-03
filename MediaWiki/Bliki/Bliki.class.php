@@ -159,7 +159,7 @@ class Bliki {
 		// Allow query-string params to override arg values
 		$limit = $wgRequest->getVal( 'limit', array_key_exists( 'limit', $args ) ? $args['limit'] : false );
 		$offset = $wgRequest->getVal( 'offset', array_key_exists( 'offset', $args ) ? $args['offset'] : false );
-		$tag = $wgRequest->getVal( 'q', array_key_exists( 'tag', $args ) ? $args['template'] : $wgBlikiDefaultCat );
+		$tag = $wgRequest->getVal( 'q', array_key_exists( 'tag', $args ) ? $args['tag'] : $wgBlikiDefaultCat );
 		$desc = $wgRequest->getBool( 'reverse', array_key_exists( 'reverse', $args ) ) ? '' : ' DESC';
 
 		// First get the total count
