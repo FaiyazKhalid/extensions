@@ -81,6 +81,7 @@ $wgRawHtml                = true;
 $wgUseSiteCss             = true;
 $wgUseSiteJs              = true;
 $wgUseWikiaCss            = true;
+$smwgQEnabled             = false;
 
 // Set the server from the environment
 $scheme = array_key_exists( 'HTTPS', $_SERVER ) && $_SERVER['HTTPS'] == 'on' ? 'https' : 'http';
